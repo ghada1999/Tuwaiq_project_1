@@ -4,6 +4,7 @@
 <title>join </title>
 <meta charset="UTF-8"/>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.bundle.min.js">
 
 
 <script src="js/مكتبة22.js"></script>
@@ -12,6 +13,7 @@
 <link href="pro2/style1.css" rel="stylesheet">
 
 <script src='pro2/scrip_photo.js'>
+
 <style>
 
 </style>
@@ -40,50 +42,58 @@
 
 <div id="navbar"class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-left">
-       <li >
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
+
+	 <li class="dropdown navbar" >
+	  <a  href="#" class="dropdown-toggle" data-toggle="dropdown" >Discover Abha</a>
+<ul class="dropdown-menu" >
+               <li><a href="#">history of the city</a></li>
+            <li><a  href="#">The most beautiful areas</a></li>
+            <li><a  href="#">Something else here</a></li>
+</ul >     
+	  </li>
+	  
+	  
+	  <li class="dropdown navbar" >
+	  <a  href="#" class="dropdown-toggle" data-toggle="dropdown" >
+	  
+	  Activities and Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Activities </a></li>
+              <li><a href="#">Events</a></li>
+              
+              
+              
+            </ul>
+	  </li>
+	  
         <li >
-          <a href="#">Abha</a>
+          <a href="#">Restaurants and cafes</a>
         </li>
+		
         <li >
-          <a >Event and actives </a>
+          <a href='pro2/hotel(1).html'>Hotel </a>
         </li>
 		<li >
-          <a >Take Order</a>
+      <a href="https://www.rehlat.com.sa/ar/airlines/saudi-arabia/saudi-arabian-tickets-online-booking/?gclid=CjwKCAjwq9mLBhB2EiwAuYdMtXoE4b7LI8Z5NOr4o-Kg33bUGMj_Jl80V06vbIzcKv4nV1FtmuJufRoCaKEQAvD_BwE">Book your flight</a>
         </li>
       </ul>
 	  
 <ul class=" nav navbar-nav navbar-right">
                        
-<li><a href="#"><i class="glyphicon glyphicon-lock"></i>Log in</a> </li>  
+<li><a href="sign.html"><i class="glyphicon glyphicon-lock"></i>Log in</a> </li>  
 </ul>
 </div>
 </div>
 
 </nav>
 <br><br><br><br>
-<!--
-<h1 > بسم الله الر حمن الر حيم</h1>
-<button id="but">نفذ التاشير</button>-->
+
 <div class="jumbotron">
 
 <div class="container">
+
 <div class="row">
-<div class="col-md-7">
-<h1 style="color:red;;font-size:30px;" align='center'>Welcome In Abha.</h1>
-<p>
-ehwiopuwfhreoiphvefiofheorihoirejer
-frejoirjoifjeoijodifjverjvopfjpoer
-jeoijoierjopefpojoejoeprfkjpoer
-erojrepojorpjpofejeorpjfrepokeorpke
-rfjkoperjeorp[fjeowipjfiowepjfewq jf
-</p>
-<a href="#" class="btn btn-info" >contnue</a>
-
-
-</div>
-<div class="col-md-5">
+<div class="col-md-12">
 
 
 
@@ -91,43 +101,43 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 7</div>
-  <img src="img/1.jpg" style="width:100%">
+  <img class="img-responsive thumbnail"  src="img/1.jpg" style="width:100%">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 7</div>
-  <img src="img/2.jpg" style="width:100%">
+  <img src="img/2.jpg" class="img-responsive thumbnail" style="width:100%" >
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 7</div>
-  <img src="img/3.jpg" style="width:100%">
+  <img src="img/222.jpg" class="img-responsive thumbnail" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">4 / 7</div>
-  <img src="img/4.jpg" style="width:100%">
+  <img src="img/4.jpg" class="img-responsive thumbnail" style="width:100%;">
   <div class="text">Caption Three</div>
 </div>
 
 
 <div class="mySlides fade">
   <div class="numbertext">5 / 7</div>
-  <img src="img/5.jpg" style="width:100%">
+  <img src="img/5.jpg" class="img-responsive thumbnail" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">6 / 7</div>
-  <img src="img/6.jpg" style="width:100%">
+  <img src="img/6.jpg" class="img-responsive thumbnail" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 <div class="mySlides fade">
   <div class="numbertext">7 / 7</div>
-  <img src="img/1.jpg" style="width:100%">
+  <img src="img/1.jpg" class="img-responsive thumbnail" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
@@ -136,7 +146,6 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
 </div>
 <br>
 
@@ -144,6 +153,10 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
 </div>
 
 
@@ -151,6 +164,25 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
 
 </div>
 </div>
+<div class="row">
+<div class="col-md-12">
+<h1 style="color:black;;font-size:30px;" align='center'>Welcome In Abha.</h1>
+<p>
+  Located at the southern end of the Red Sea coast, Abha is the culturally rich capital of the Asir region and a great base for exploring this mountainous part of Arabia. The city has a wealth of delights to discover, from the mud-walled Shada Palace, now a museum, to Abha Dam Lake and the Abha Palace Theme Park. Shop in vibrant traditional markets in 
+  Abha and its sister city
+</p>
+<a href="#" class="btn btn-info" >contnue</a>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
 
 </div>
 </div>
@@ -162,92 +194,30 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
 
 <div class="container">
 <div class="row">
-<div class="col-md-8">
-<h1  class="page-header" style="color:red">News</h1>
+<div class="col-md-1"></div>
+<div class="col-md-10">
 <!--الموضوع الاول---->
 
 
 
-<div> video
-<video src=''></video>
-</div>
+<video controls=controls src="https://vod-progressive.akamaized.net/exp=1635170205~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2999%2F20%2F514995831%2F2387664826.mp4~hmac=cd6114b3b5f217efab1ee0186fb823fccfefb65d15f298e4e7e21a80e4d7426f/vimeo-prod-skyfire-std-us/01/2999/20/514995831/2387664826.mp4?filename=1.mp4"  width=100% height=500px poster=""></video>
+
+<p>
+explain the vid 
+
+</p>
+<a href="#" class="btn btn-info" >contnue</a>
 
 
-
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<ul class="pager">
-<li class="previous"><a href="#">&larr;order</a></li>
-<li class="next"><a href="#">newer&rarr;</a></li>
-
-
-</ul>
-
 </div>
 
 
 
 
-<div class="col-md-4">
-<!-- البحث-->
-        <div class="well">
-		<h4 dir="rtl">Search</h4>
-	    <!--قروب يشمل الزر والبتن-->
-		<div class="input-group">
-		<!-- لكي يهر التكست مدموج مع البوتنspanمع الinputاستخدمنا ال -->
-		 <input type="text" class="form-control">
-		<span class="input-group-btn">
-		
-		    <button class="btn btn-success" type="button">
-			<span class="glyphicon  glyphicon-search"></span>
-			
-		</span>
-		
-		</div>
-	
-	    </div>
-	<!--الاصناف-->
-	          <div class="well">
-			 
-			  <div class="row">
-			   <h4 dir="rtl" style='color:red'>addres<h4>
-			         <div class="col-sm-6">
-			         <ul dir="rtl" >
-			       	 <li ><a href="#">hhhhhhh </a></li>
-				     <li ><a href="#">iiiiiiii  </a></li>
-				     <li><a href="#">kkkkkk</a></li>
-				     <li ><a href="#">kkkkkkkk </a></li>
-				     </ul>
-				      </div>
-					
-					<div class="col-sm-6">
+<div class="col-md-1">
 
-			         <ul dir="rtl" >
-			       	 <li ><a href="#">jjjjjj </a></li>
-				     <li ><a href="#">sssssss  </a></li>
-				     <li><a href="#">kkkkkkkkkkkk</a></li>
-				     <li ><a href="#">sfftyftyfuf </a></li>
-				     </ul>
-				      </div>
-				</div>
-				      </div> 
-     						      <!---->
-								 
-		                         <div class="well">
-								  <h4 >addres</h4>
-								 <ul class="list-unstyle">
-								 <li><a href="#">deedg</a></li>
-								  <li><a href="#">bag</a></li>
-								   <li><a href="#">dag</a></li>
-								    <li><a href="#">books</a></li>
-									 <li><a href="#">saleh double</a></li>
-								 </ul>
-								 </div>
 								 
 	         
 </div>
@@ -261,12 +231,12 @@ rfjkoperjeorp[fjeowipjfiowepjfewq jf
              <footer  style='background-color:gray;'  class="col-md-12">
 		 
 		      <div  >
-			  <p style='color:white' dir="rtl"><i class="glyphicon glyphicon-email"></i>djsjssknsdd@gmail.com<br> +966683836 <i class="glyphicon glyphicon-earphone"></i></p>
+			  <p style='color:white' dir="rtl"><i class="glyphicon glyphicon-email"></i>ABHA@gmail.com<br> +966683836 <i class="glyphicon glyphicon-earphone"></i></p>
+        
 			  </div>
 		  
 		  </footer>
 
-<br><br><br><br><br><br>
 </body>
 </html>
 
