@@ -1,5 +1,5 @@
 // DUMMY PRODUCTS (PRODUCT ID : DATA)
-var products = {
+var hotils = {
   123: {
     name : "Abha Palace ",
     desc : "5 stars Hotel ",

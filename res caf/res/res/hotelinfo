@@ -1,0 +1,32 @@
+// DUMMY PRODUCTS (PRODUCT ID : DATA)
+var products = {
+  123: {
+    name : "Abha Palace",
+    desc : "5 stars ",
+    img : "f2.jpg",
+    price : 800 
+  },
+  
+  
+  124: {
+    name : "h number 2",
+    desc : " this isWomen's black jacket.",
+    img : "f3.jpg",
+    price :30
+  },
+  
+  
+  125: {
+    name : " h number 3",
+    desc : "this is  Women's pink jacket.",
+    img : "4.jpg",
+    price : 40
+  },
+  126: {
+    name : "h number 4",
+    desc : "this is Women's coat black. ",
+    img : "5.jpg",
+    price : 50
+  }
+ 
+};

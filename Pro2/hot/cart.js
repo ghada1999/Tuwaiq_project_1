@@ -1,51 +1,46 @@
 var cart = {
-  // (A) PROPERTIES
-  hPdt : null, // HTML products list
-  hItems : null,// HTML current cart
-  items : {},// Current items in cart
-  iURL : "images/", // Product image URL folder
-// توضيحات للفهم 
-  // (B) LOCALSTORAGE CART
-  // (B1) SAVE CURRENT CART INTO LOCALSTORAGE
-  //join(key , value ) نموذج 
-  //stringify لتحويل القيم الى سلاسل or ارجاع قيممه تحتوي على نص
+  hPdt : null, 
+  hItems : null,
+  items:{ },
+  iURL : "images/", 
+
   
   save : function () {
     localStorage.setItem("cart",JSON.stringify(cart.items));
   },
 
-  // (B2) LOAD CART FROM LOCALSTORAGE
   load : function () {
     cart.items = localStorage.getItem("cart");
-    if (cart.items == null) { cart.items = {}; 
+    if (cart.items == null) {
+		cart.items = {}; 
 	}
-	//JSON.parse لتحويل السلسله الى قيم or ارجاع قيمه ل 
-    else { cart.items = JSON.parse(cart.items); }
-    
-   
+    else { 
+	cart.items =JSON.parse(cart.items);
+	}
   },
 
-  // (B3) EMPTY ENTIRE CART
   nuke : function () {
-    if (confirm("Empty cart?")) {
-      cart.items = {};
+	  
+	  
+      cart.items= {};
       localStorage.removeItem("cart");
       cart.list();
-    }
+    
   },
 
   // (C) INITIALIZE
   init : function () {
     // (C1) GET HTML ELEMENTS
-    cart.hPdt = document.getElementById("cart-products");
+    cart.hPdt= document.getElementById("cart-hot");
     cart.hItems = document.getElementById("cart-items");
 
     // (C2) DRAW PRODUCTS LIST
     cart.hPdt.innerHTML = "";
     let p, item, part;
-    for (let id in products) {
+    for (let id in hotils) {
       // WRAPPER
-         p = products[id];
+         p = hotils[id];
+		 
       item = document.createElement("div");
       item.className = "p-item";
       cart.hPdt.appendChild(item);
@@ -54,13 +49,13 @@ var cart = {
 	 
 
       part = document.createElement("img");
-      part.src = cart.iURL + p.img;
+      part.src = cart.iURL+p.img;
       part.className = "p-img";
       item.appendChild(part);
-	  
+	 
       // PRODUCT NAME
-      part = document.createElement("div");  
-      part.innerHTML = p.name;
+      part = document.createElement("div");
+      part.innerHTML=p.name;
       part.className = "p-name";
       item.appendChild(part);
 
@@ -76,16 +71,19 @@ var cart = {
       part.className = "p-price";
       item.appendChild(part);
 	  
-	  
       // ADD TO CART
       part = document.createElement("input");
       part.type = "button";
       part.value = "Take Order";
       part.className = "cart p-add";
-      part.onclick = cart.add;
-      part.dataset.id = id;
+     
+	  
+      item.addEventListener("click",cart.checkout);
+	   part.onclick = cart.add;
+      part.dataset.id =id;
       item.appendChild(part);
-    }
+ 
+   }
 
     // (C3) LOAD CART FROM PREVIOUS SESSION
     cart.load();
@@ -101,8 +99,7 @@ var cart = {
     let item, part, pdt;
     let empty = true;
     for (let key in cart.items) {
-		//hasOwnProperty فحص اذا كان فاضي فيعمل  
-		//true من
+		
       if(cart.items.hasOwnProperty(key)) { empty = false; break; }
     }
 
@@ -115,11 +112,11 @@ var cart = {
     }
 
     // (D3) CART IS NOT EMPTY - LIST ITEMS
-    else {
+    else{
       let p, total = 0, subtotal = 0;
       for (let id in cart.items) {
         // ITEM
-        p = products[id];
+        p = hotils[id];
         item = document.createElement("div");
         item.className = "c-item";
         cart.hItems.appendChild(item);
@@ -161,7 +158,7 @@ var cart = {
       item.innerHTML ="TOTAL: $" + total;
       cart.hItems.appendChild(item);
 
-      // EMPTY BUTTONS
+      /*/ EMPTY BUTTONS
       item = document.createElement("input");
       item.type = "button";
       item.value = "Empty";
@@ -169,13 +166,13 @@ var cart = {
       item.className = "c-empty cart";
       cart.hItems.appendChild(item);
 
-      // CHECKOUT BUTTONS   
+      // CHECKOUT BUTTONS
       item = document.createElement("input");
       item.type = "button";
       item.value = "Checkout";
       item.addEventListener("click", cart.checkout);
       item.className = "c-checkout cart";
-      cart.hItems.appendChild(item);
+      cart.hItems.appendChild(item); */
     }
   },
 
@@ -202,49 +199,55 @@ var cart = {
       cart.items[this.dataset.id] = this.value;
       var total = 0;
       for (let id in cart.items) {
-        total += cart.items[id] * products[id].price;
+        total += cart.items[id] * hotils[id].price;
         document.getElementById("c-total").innerHTML ="TOTAL: $" + total;
 
       }
     }
   },
 
-  // (G) REMOVE ITEM FROM CART 
+  // (G) REMOVE ITEM FROM CART
   remove : function () {
     delete cart.items[this.dataset.id];
     cart.save();
     cart.list();
   },
+  
+   checkout : function () {
+  
+$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999; border-radius:6px 6px 6px 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;}</style>").appendTo("head");
 
-  checkout : function () {
+function alertMX(t){
+$( "body" ).append( $( "<div id='boxMX'><p class='msgMX'></p><p>CLOSE</p></div>" ) );
+$('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2;
 
-        alert("sacssfuly");
+$('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
+$("#boxMX").click(function() { $(this).remove(); });  };	 
 
-  }
+	 $(".log").show(1000);
+	 
+$("#box").hide(100);
+	    $(document).ready(function(){
+$("#a").click(function(){
+if($("#uname").val()!='c'||$("#pass").val()!=123){
+	cart.nuke();
+$(".aaa").show(1000);
+}
+//
+else
+{
+$(".log").hide(2000);
+$("#box").show(2000);
+alertMX('The prosses done successfully');
+}
+});
+
+});
+	   
+	 
+
+}
+
+
 };
 window.addEventListener("DOMContentLoaded", cart.init);
-
-	function Ch(){
-	
-	
-	var S=document.getElementById("ComboColors").value;
-	var box=document.getElementById("box");
-	box.style.backgroundColor=S;
-	}
-	function Chp(){
-	
-	
-	var S=document.getElementById("ComboColors").value;
-	var box=document.getElementById("cart-wrap");
-	box.style.backgroundColor=S;
-	}
-	
-		function Chpi(){
-	
-	
-	var S=document.getElementById("ComboColors").value;
-	var box=document.getElementById("cart-products");
-	box.style.backgroundColor=S;
-	}
-	
-	
