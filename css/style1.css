@@ -1,12 +1,40 @@
 
-.navbar-default .navbar-nav>li>a {
+
+.navbar-default #navbar .navbar-nav>li>a {
     color: #fff;
-font-size:1.3em;
+font-size:1.1em;
+  background-color: #cec775;
 } 
-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+
+nav{
+  background-color: #cec775;
+}
+footer{  background-color: #cec775; }
+ .navbar-default .navbar-nav>li>a:hover {
    
     background-color: white;}
 	
+	
+	
+@media(min-width: 768px){
+.navbar-fixed-bottom, .navbar-fixed-top {
+
+    color: #fff;
+font-size:1.1em;
+height:53px;
+  background-color: #cec775;
+height:53px;
+} 
+
+nav{
+height:53px;
+  background-color: #cec775;
+}
+footer{  background-color: #cec775; }
+nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+   
+    background-color: white;}
+}
 * {}
 body {}
 .mySlides {display: none}

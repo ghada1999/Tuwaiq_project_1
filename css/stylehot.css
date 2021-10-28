@@ -48,7 +48,11 @@ input.cart, button.cart {
   font-weight: 700;
   cursor: pointer;
 }
-
+#cart-items{
+	
+  display: grid;
+  grid-template-columns: auto ;
+}
 #cart-hot {
   display: grid;
   grid-template-columns: auto auto ;
@@ -56,8 +60,15 @@ input.cart, button.cart {
 }
 
 @media(max-width:700px){
-	.grid-container{
 
-  grid-template-columns: auto;
-	}
+
+#cart-hot {
+	width:90%;
+  display:grid;
+  grid-template-columns:auto;
+}
+#cart-items{
+	width:100%;	
+	
+}
 }

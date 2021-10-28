@@ -21,11 +21,16 @@ var cart = {
 
   nuke : function () {
 	  
+	
 	  
-      cart.items= {};
+  var de=  window.confirm("Do you want delete all ?");
+  if(de == true){
+    cart.items= {};
       localStorage.removeItem("cart");
       cart.list();
-    
+}else
+	
+    cart.list();
   },
 
   // (C) INITIALIZE
@@ -74,7 +79,7 @@ var cart = {
       // ADD TO CART
       part = document.createElement("input");
       part.type = "button";
-      part.value = "Take Order";
+      part.value = "Resive";
       part.className = "cart p-add";
      
 	  
@@ -130,7 +135,7 @@ var cart = {
         // REMOVE
         part = document.createElement("input");
         part.type = "button";
-        part.value = "XX";
+        part.value = "delete";
         part.dataset.id = id;
         part.className = "c-del cart";
         part.addEventListener("click", cart.remove);
@@ -158,7 +163,7 @@ var cart = {
       item.innerHTML ="TOTAL: $" + total;
       cart.hItems.appendChild(item);
 
-      /*/ EMPTY BUTTONS
+      // EMPTY BUTTONS زر التحقق من وجود غرفة شاغره 
       item = document.createElement("input");
       item.type = "button";
       item.value = "Empty";
@@ -166,13 +171,13 @@ var cart = {
       item.className = "c-empty cart";
       cart.hItems.appendChild(item);
 
-      // CHECKOUT BUTTONS
+      // CHECKOUT BUTTONS 
       item = document.createElement("input");
       item.type = "button";
       item.value = "Checkout";
       item.addEventListener("click", cart.checkout);
       item.className = "c-checkout cart";
-      cart.hItems.appendChild(item); */
+      cart.hItems.appendChild(item); 
     }
   },
 
@@ -215,14 +220,14 @@ var cart = {
   
    checkout : function () {
   
-$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999; border-radius:6px 6px 6px 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;}</style>").appendTo("head");
+$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999;  -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;color:green}h4{color:black}</style>").appendTo("head");
 
 function alertMX(t){
-$( "body" ).append( $( "<div id='boxMX'><p class='msgMX'></p><p>CLOSE</p></div>" ) );
+$( "body" ).append( $( "<div id='boxMX'><h4  class=modal-title>Missge</h4><hr><p class='msgMX'></p></div>" ) );
 $('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2;
 
 $('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
-$("#boxMX").click(function() { $(this).remove(); });  };	 
+$("#boxMX").hide(7000); };	 
 
 	 $(".log").show(1000);
 	 
@@ -230,7 +235,7 @@ $("#box").hide(100);
 	    $(document).ready(function(){
 $("#a").click(function(){
 if($("#uname").val()!='c'||$("#pass").val()!=123){
-	cart.nuke();
+	
 $(".aaa").show(1000);
 }
 //
