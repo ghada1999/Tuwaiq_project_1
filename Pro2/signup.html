@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignUp Page</title>
+
+<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script  src="../js/bootstrap.min.js"></script >
+
+
+
+    <!-- Bootstrap CSS -->
+ 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// 
+    -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <!-[endif]-->  !-->
+</head>
+
+<body class="bg-default">
+    <div class="container" align='center'>
+        <h1 class="text-center">SIGNUP PANEL</h1>
+<form role='form'>
+        <div  class="col-md-offset-5 col-md-5 col-md-offset-5">
+            <br />
+            Enter Name:
+            <input type="text" class="form-control" name="" id="name" required/>
+            <br />
+            Enter Age:
+            <input type="text" class="form-control" name="" id="age" required/>
+            <br />
+            Enter Address:
+            <input type="text" class="form-control" id="address" required/>
+            Enter Email:
+            <input type="text" class="form-control"  id="email" required/>
+            Enter Pass:
+            <input type="text" class="form-control"  id="pass" required/>
+            <br />
+            <input type="submit" onclick="signup()" class="form-control btn btn-primary" value='ignUp' required/>  
+        </div>
+		</form>
+    </div>
+
+    <script>
+
+        function signup() {
+
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var address = document.getElementById("address").value;
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("pass").value;
+if(name!=''||age!=''||address!=''||email!=''||pass!=''){
+            localStorage.setItem("name1", name)
+            localStorage.setItem("age1", age)
+            localStorage.setItem("address1", address)
+            localStorage.setItem("email1", email)
+            localStorage.setItem("pass1", pass)
+
+           document.getElementById("name").value="";
+           document.getElementById("age").value="";
+          document.getElementById("address").value="";
+           document.getElementById("email").value="";
+           document.getElementById("pass").value="";
+
+      
+alert("user registered successfully...!!!");
+ document.cookie="emailc= "+getitem1+"; max-age="+60*60*24*2;
+ document.cookie="passc= "+getitem2+"; max-age="+60*60*24*2;
+
+     window.location.href="login.html";
+}
+ else{
+ 
+alert("You have error!!!");
+ }       }
+
+    </script>
+
+
+    <!-- jQuery -->
+
+<script src="../js/مكتبة22.js"></script>
+</body>
+
+</html>

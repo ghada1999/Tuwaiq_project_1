@@ -32,6 +32,13 @@ var cart = {
 	
     cart.list();
   },
+  nukee : function () {
+    cart.items= {};
+      localStorage.removeItem("cart");
+      cart.list();
+
+    cart.list();
+  },
 
   // (C) INITIALIZE
   init : function () {
@@ -82,7 +89,6 @@ var cart = {
       part.value = "Resive";
       part.className = "cart p-add";
      
-	  
       item.addEventListener("click",cart.checkout);
 	   part.onclick = cart.add;
       part.dataset.id =id;
@@ -175,7 +181,7 @@ var cart = {
       item = document.createElement("input");
       item.type = "button";
       item.value = "Checkout";
-      item.addEventListener("click", cart.checkoutt);
+      item.addEventListener("click", cart.checkout);
       item.className = "c-checkout cart";
       cart.hItems.appendChild(item); 
     }
@@ -218,69 +224,44 @@ var cart = {
     cart.list();
   },
   
-   checkout : function () {
-  
+   checkout:function () {
 $("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999;  -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;color:green}h4{color:black}</style>").appendTo("head");
 
-function alertMX(t){
+function alertMXx(t){
 $( "body" ).append( $( "<div id='boxMX'><h4  class=modal-title>Missge</h4><hr><p class='msgMX'></p></div>" ) );
 $('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2;
 
 $('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
-$("#boxMX").hide(7000); };	 
+$("#boxMX").hide(7000); };
+  
+  
 
-	 $(".log").show(1000);
+
+
+if(localStorage.getItem("name1")==null){
+	   window.location.href="login.html";
 	 
-$("#box").hide(100);
-	    $(document).ready(function(){
-$("#a").click(function(){
-if($("#uname").val()!='c'||$("#pass").val()!=123){
+	 }  else{
+	 alertMXx("Prosses sacssfully");
 	
-$(".aaa").show(1000);
+   
 }
-//
-else
-{
-$(".log").hide(2000);
-$("#box").show(2000);
-alertMX('The prosses done successfully');
-}
-});
 
-});
-	   
-	 
+   var getitem1=localStorage.getItem("email1");
+   var getitem2=localStorage.getItem("pass1");
 
-},
+ document.cookie="emailc= "+getitem1+"; max-age="+60*60*24*2;
+ document.cookie="passc= "+getitem2+"; max-age="+60*60*24*2;
 
-checkoutt : function () {
-  
-$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999;  -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;color:green}h4{color:black}</style>").appendTo("head");
+    
+ 
+	
+ 
+    }
 
-function alertMX(t){
-$( "body" ).append( $( "<div id='boxMX'><h4  class=modal-title>Missge</h4><hr><p class='msgMX'></p></div>" ) );
-$('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2;
 
-$('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
-$("#boxMX").hide(7000); };	 
 
-	 $(".log").show(1000);
-	 
-$("#box").hide(100);
-	    $(document).ready(function(){
-$("#a").click(function(){
-
-//
-
-alertMX('The prosses done successfully');
-
-});
-
-});
-	   
-	 
-
-}
+    
 
 };
 window.addEventListener("DOMContentLoaded", cart.init);

@@ -1,7 +1,19 @@
-body{
-	background-image:url("Bg.jpg");
-	
+.navbar-default #navbar .navbar-nav>li>a {
+    color: #fff;
+font-size:1.1em;
+  background-color: #cec775;
+} 
+
+nav{
+
+  background-color: #cec775;
 }
+footer{  background-color: #cec775; }
+nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+   
+    background-color: white;}
+	
+@media(main-width:700px){
 
 .navbar-default #navbar .navbar-nav>li>a {
     color: #fff;
@@ -10,27 +22,7 @@ font-size:1.1em;
 } 
 
 nav{
-  background-color: #cec775;
-}
-footer{  background-color: #cec775; }
- .navbar-default .navbar-nav>li>a:hover {
-   
-    background-color: white;}
-	
-	
-	
-@media(min-width: 768px){
-.navbar-fixed-bottom, .navbar-fixed-top {
-
-    color: #fff;
-font-size:1.1em;
-height:53px;
-  background-color: #cec775;
-height:53px;
-} 
-
-nav{
-height:53px;
+eight:53px;
   background-color: #cec775;
 }
 footer{  background-color: #cec775; }

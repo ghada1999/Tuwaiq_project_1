@@ -231,38 +231,42 @@ var cart = {
     cart.save();
     cart.list();
   },
-  
-   checkout : function () {
-  
-$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999; border-radius:6px 6px 6px 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;}</style>").appendTo("head");
+     checkout:function () {
+$("<style type='text/css'>#boxMX{display:none;background:white;padding: 10px;border: 2px solid #ddd;float: left;font-size: 1.2em;position: fixed;top: 50%; left: 50%;z-index: 99999;box-shadow: 0px 0px 20px #999; -moz-box-shadow: 0px 0px 20px #999; -webkit-box-shadow: 0px 0px 20px #999;  -moz-border-radius: 6px; -webkit-border-radius: 6px; font:13px Arial, Helvetica, sans-serif; padding:6px 6px 4px;width:25%;color:green}h4{color:black}</style>").appendTo("head");
 
-function alertMX(t){
-$( "body" ).append( $( "<div id='boxMX'><p class='msgMX'></p><p>CLOSE</p></div>" ) );
-$('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2; 
+function alertMXx(t){
+$( "body" ).append( $( "<div id='boxMX'><h4  class=modal-title>Missge</h4><hr><p class='msgMX'></p></div>" ) );
+$('.msgMX').text(t); var popMargTop = ($('#boxMX').height() + 24) / 2, popMargLeft = ($('#boxMX').width() + 24) / 2;
+
 $('#boxMX').css({ 'margin-top' : -popMargTop,'margin-left' : -popMargLeft}).fadeIn(600);
-$("#boxMX").click(function() { $(this).remove(); });  };	 
+$("#boxMX").hide(7000); };
+  
+  
 
-	 $(".log").show(100);
+
+
+if(localStorage.getItem("name1")==null){
+	   window.location.href="login.html";
 	 
-$("#box").hide(100);
-	    $(document).ready(function(){
-$("#a").click(function(){
-if($("#uname").val()!='c'||$("#pass").val()!=123){
-	cart.nuke();
-$(".aaa").show(1000);
+	 }  else{
+	 alertMXx("Prosses sacssfully");
+	
+   
 }
-else{
-$(".log").hide(2000);
-$("#box").show(2000);
-alertMX('The prosses done successfully ');
-}
-});
 
-});
-	   
-	 
+   var getitem1=localStorage.getItem("email1");
+   var getitem2=localStorage.getItem("pass1");
 
-}
+ document.cookie="emailc= "+getitem1+"; max-age="+60*60*24*2;
+ document.cookie="passc= "+getitem2+"; max-age="+60*60*24*2;
+
+    
+ 
+	
+ 
+    }
+
+
 
 
 };
